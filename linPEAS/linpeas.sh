@@ -515,22 +515,9 @@ if ! [ "$FAST" ] && ! [ "$SUPERFAST" ]; then
   done;
 fi
 
-echo ""
-printf "  linpeas $VERSION" | sed "s,.*,&,"; printf " by carlospolop\n"
-echo ""
-printf "ADVISORY: ""$ADVISORY\n"
-echo ""
-printf "Linux Privesc Checklist: ""https://book.hacktricks.xyz/linux-unix/linux-privilege-escalation-checklist\n"
-echo " LEGEND:" | sed "s,LEGEND,&,"
-echo "  RED/YELLOW: 99% a PE vector" | sed "s,RED/YELLOW,[1;31;103m&,"
-echo "  RED: You must take a look at it" | sed "s,RED,&,"
-echo "  LightCyan: Users with console" | sed "s,LightCyan,&,"
-echo "  Blue: Users without console & mounted devs" | sed "s,Blue,&,"
-echo "  Green: Common things (users, groups, SUID/SGID, mounts, .sh scripts, cronjobs) " | sed "s,Green,&,"
-echo "  LightMangeta: Your username" | sed "s,LightMagenta,&,"
 if [ "$IAMROOT" ]; then
   echo ""
-  echo "  YOU ARE ALREADY ROOT!!! (it could take longer to complete execution)" | sed "s,YOU ARE ALREADY ROOT!!!,[1;31;103m&,"
+  echo "  YOU ARE ALREADY ROOT!!! (it could take longer to complete execution)" | sed "s,YOU ARE ALREADY ROOT!!!,&,"
   sleep 3
 fi
 echo ""
